@@ -1,50 +1,70 @@
-# React + TypeScript + Vite
+# RF Assignment
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+This is a simple application built using **Vite**, **React**, and **TypeScript**. The project allows users to add and remove items dynamically, displaying them in a grid-based UI. The data is fetched from a mock API, ensuring smooth and interactive state management.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Add new items** dynamically.
+- **Delete items** using the delete button.
+- **Uses a mock API** to fetch and manage data.
+- **Styled with a user-friendly UI**.
+- **Fast performance** using Vite and TypeScript.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- [Vite](https://vitejs.dev/) - Fast build tool for frontend projects
+- [React](https://react.dev/) - Component-based UI framework
+- [TypeScript](https://www.typescriptlang.org/) - Strongly typed JavaScript
+- [Mock API](https://mockapi.io/) - Simulating backend operations
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Styling
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Installation
+
+To run this project locally, follow these steps:
+
+### 1. Clone the Repository
+
+```sh
+git clone https://github.com/josh10051/rf-assignment.git
+cd rf-assignment
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Install Dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+```sh
+npm install
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### 3. Start the Development Server
+
+```sh
+npm run dev
+```
+
+The app will be available at **`http://localhost:5173/`**.
+
+## Usage
+
+1. Click on **Add Item** to create a new item.
+2. Click the **trash icon** to delete an item.
+3. Items are displayed in a grid format.
+4. Data is fetched from a mock API for demonstration purposes.
+
+## Project Structure
+
+```
+├── src
+│   ├── components  # Reusable components
+│   ├── pages        # Page-specific components
+│   ├── services     # API interactions
+│   ├── styles       # CSS stylesheets
+│   ├── App.tsx      # Main application component
+│   ├── main.tsx     # Entry point for React
+│   └── ...
+├── public          # Static assets
+├── package.json    # Project dependencies and scripts
+├── vite.config.ts  # Vite configuration
+└── README.md       # Documentation
 ```
